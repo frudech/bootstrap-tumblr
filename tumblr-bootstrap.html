@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Tumblr variables -->
+  <meta name="if:Show Toolbar" content="1" />
+  <meta name="if:Show Description On Front Page" content="1" />
+  <meta name="image:Background Image" content="" />
+  <meta name="text:Featured Posts Tag" content="feature" />
+
+  <meta name="text:Disqus Shortname" content=""/>
+  <meta name="text:Google Analytics UA Code" content="" />
+
+  <meta name="text:Twitter URL" content="" />
+  <meta name="text:Vimeo URL" content="" />
+  <meta name="text:YouTube URL" content="" />
+  <meta name="text:SoundCloud URL" content="" />
+  <meta name="text:Facebook URL" content="" />
+  <meta name="text:Flickr URL" content="" />
+  <meta name="text:foursquare URL" content="" />
+  <meta name="text:GooglePlus URL" content="" />
+  
+  <meta name="text:Custom Stylesheet URL" content="" />
+  
+  <!-- Twitter Bootstrap v2.0.3 CSS files -->
+  <link href="http://static.tumblr.com/gljj81e/zpUm33wsh/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <link href="http://static.tumblr.com/gljj81e/xGSm33wsy/bootstrap-responsive.min.css" rel="stylesheet" type="text/css" />
+  
+  <!-- Font Awesome CSS for cool icons designed for bootstrap -->
+  <link href="http://bootstrap-sinatra.herokuapp.com/css/font-awesome.css" rel="stylesheet" type="text/css" />
+  
+  
+  
+  
+  <!-- Below is all the CSS stuff you might want to revise -->
+  <style type="text/css">
+		
+		
+		
+	</style>
+	<!-- End of CSS stuff you might want to edit -->
+	
+	
+	
+	
+	<!-- the following poops out the custom css that you include through the appearance options form -->
+  {block:IfCustomStylesheetURL}
+    <!-- Import application styling -->
+    <link href="{text:Custom Stylesheet URL}" rel="stylesheet">
+  {/block:IfCustomStylesheetURL}
+  
+	<style type="text/css">
+		{CustomCSS}
+	</style>
+  <!-- End of your custom CSS -->
+
+  {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+  {/block:Description}
+  <meta name="keywords" content="{block:Tags}{Tag}, {/block:Tags}{Title}" />
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <title>{block:PostTitle}{PostTitle} | {/block:PostTitle}{Title}</title>
+  
+  
+  <script src="http://static.tumblr.com/gljj81e/H53m34444/modernizr-2.5.3.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+    </div><!-- end of first row -->
+  </div><!-- end of container -->
+  
+  
+  <!-- jQuery 1.7.2 - it grabs the google cdn-hosted version and if that doesn't work loads the version hosted by tumblr -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  		<script>window.jQuery || document.write('<script src="http://static.tumblr.com/gljj81e/fTnm33ygs/jquery-1.7.2.min.js"><\/script>')</script>
+  		
+  <!-- Twitter Bootstrap v2.0.3 javascript file -->
+  <script src="http://static.tumblr.com/gljj81e/iB8m33wr5/bootstrap.min.js"></script>
+  
+  {block:IfGoogleAnalyticsUACode}
+  <!-- Google Analytics script -->
+  <script>
+    var ga_code = {text:Google Analytics UA Code};
+    var _gaq=[['_setAccount',ga_code],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+  {/block:IfGoogleAnalyticsUACode}
+</body>
+</html>
